@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-black);
+}
+
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+}
+
+/* HEADER */
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    height: 85px;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.navegacao .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Inter-Bold', sans-serif;
+}
+
+.campo-busca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.campo-busca input {
+    border: none;
+    font-size: 1rem;
+}
+
+.campo-busca input::placeholder {
+    font-size: 1rem;
+}
+
+.campo-busca input:focus {
+    outline: none;
+}
+
+.menu-container {
+    display: flex;
+}
+
+.login-acesso {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-acesso a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter-Regular', sans-serif;
+}
+
+.login-acesso a:nth-child(2) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 5px 20px;
+    border-radius: 30px;
+}
+
+.menu {
+    display: none;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter-Regular', sans-serif;
+    color: var(--color-black);
+}
+
+.bi-person-circle {
+    margin-left: 15px;
+    font-size: 1.75rem;
+}
