@@ -1,92 +1,115 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--color-black);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-black);
 }
 
 :root {
-    --color-black: #000;
-    --color-white: #fff;
+  --color-black: #000;
+  --color-white: #fff;
 }
 
 /* HEADER */
 .cabecalho {
-    display: flex;
-    justify-content: center;
-    height: 85px;
+  display: flex;
+  flex-direction: column;
 }
 
 .navegacao {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  height: 85px;
 }
 
 .navegacao .logo {
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: 'Inter-Bold', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Inter-Bold", sans-serif;
 }
 
 .campo-busca {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .campo-busca input {
-    border: none;
-    font-size: 1rem;
+  border: none;
+  font-size: 1rem;
 }
 
 .campo-busca input::placeholder {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .campo-busca input:focus {
-    outline: none;
+  outline: none;
 }
 
 .menu-container {
-    display: flex;
+  display: flex;
 }
 
 .login-acesso {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .login-acesso a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Inter-Regular', sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Inter-Regular", sans-serif;
 }
 
 .login-acesso a:nth-child(2) {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: 5px 20px;
-    border-radius: 30px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 5px 20px;
+  border-radius: 30px;
 }
 
 .menu {
-    display: none;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
+  display: none;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
 }
 
 .menu li a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Inter-Regular', sans-serif;
-    color: var(--color-black);
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Inter-Regular", sans-serif;
+  color: var(--color-black);
 }
 
 .bi-person-circle {
-    margin-left: 15px;
-    font-size: 1.75rem;
+  margin-left: 15px;
+  font-size: 1.75rem;
+}
+
+.home-capa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 467px;
+}
+
+.title {
+  position: relative;
+  width: 500px;
+}
+
+.title h1 {
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 4rem;
+}
+
+.title img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
