@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Inter-Bold";
-  src: url("../assets/fonts/otf/Inter-Bold.otf") format("opentype"),
-    url("../assets/fonts/ttf/Inter-Bold.ttf") format("truetype"),
-    url("../assets/fonts/woff-hinted/Inter-Bold.woff2") format("woff2");
+  src: url("../assets/fonts/Inter-Bold.otf") format("opentype"),
+    url("../assets/fonts/Inter-Bold.ttf") format("truetype"),
+    url("../assets/fonts/Inter-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 @font-face {
     font-family: "Inter-Regular";
-    src: url("../assets/fonts/otf/Inter-Regular.otf") format("opentype"),
-        url("../assets/fonts/ttf/Inter-Regular.ttf") format("truetype"),
-        url("../assets/fonts/woff-hinted/Inter-Regular.woff2") format("woff2");
+    src: url("../assets/fonts/Inter-Regular.otf") format("opentype"),
+        url("../assets/fonts/Inter-Regular.ttf") format("truetype"),
+        url("../assets/fonts/Inter-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
