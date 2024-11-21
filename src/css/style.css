@@ -118,7 +118,7 @@
 }
 
 /* SEÇÃO CARD LARGO */
-.card-largo {
+.card-largo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +126,7 @@
   height: 321px;
 }
 
-.card-largo-container {
+.card-largo {
   height: 243px;
   border: solid 1px #e2e2e2;
   border-radius: 5px;
@@ -139,33 +139,32 @@
   padding-left: 50px;
 }
 
-.card-largo-container .conteudo {
+.card-largo .conteudo {
   width: 400px;
-
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.card-largo-container .conteudo div:nth-child(1) {
+.card-largo .conteudo div:nth-child(1) {
   display: flex;
   flex-direction: column;
   gap: 27px;
 }
 
-.card-largo-container .conteudo h3 {
+.card-largo .conteudo h3 {
   font-family: 'Inter-Bold', sans-serif;
   font-size: 1.9rem;
   color: var(--color-dark-blue);
 }
 
-.card-largo-container .conteudo p {
+.card-largo .conteudo p {
   font-family: 'Inter-Regular', sans-serif;
   font-size: 0.875rem;
   color: var(--color-light-blue);
 }
 
-.card-largo-container .conteudo div:nth-child(2) {
+.conteudo div:nth-child(2) {
   display: flex;
   justify-content: space-between;
 }
@@ -179,12 +178,67 @@
 .ver-mais {
   font-family: 'Inter-Bold', sans-serif;
   font-size: 0.875rem;
-  color: var(--color-black);
+  color: var(--color-dark-blue);
   text-decoration: none;
 }
 
-.card-largo-container img {
+.card-largo img {
   width: 400px;
   height: 243px;
   border-radius: 5px;
+}
+
+.card-pequeno-wrapper {
+  width: 100%;
+  height: 394px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 33px;
+}
+
+.card-pequeno {
+  width: 300px;
+  height: 382px;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgb(192, 189, 189, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.card-pequeno img {
+  width: 100%;
+  height: 179px;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 18px;
+}
+
+.card-pequeno .conteudo {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card-pequeno .conteudo div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-pequeno .conteudo h3 {
+  font-family: 'Inter-Bold', sans-serif;
+  font-size: 1.25rem;
+  color: var(--color-dark-blue);
+}
+
+.card-pequeno .conteudo p {
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-light-blue);
 }
