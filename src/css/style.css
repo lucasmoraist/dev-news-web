@@ -13,6 +13,10 @@
   --color-purple: #6b46c1;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* DEFAULT */
 .data-postagem {
   font-family: 'Inter-Regular', sans-serif;
