@@ -10,6 +10,7 @@
   --color-white: #fff;
   --color-light-blue: #4a5568;
   --color-dark-blue: #2d3748;
+  --color-purple: #6B46C1;
 }
 
 /* DEFAULT */
@@ -244,4 +245,92 @@
   font-family: 'Inter-Regular', sans-serif;
   font-size: 0.875rem;
   color: var(--color-light-blue);
+}
+
+/* SEÇÃO BIG CARD */
+.big-card-wrapper {
+  width: 100%;
+  height: 646px;
+  padding: 0 63px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.card-big-container {
+  width: 965px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-big {
+  width: 100%;
+  height: 500px;
+  background-color: #f7fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  padding-left: 63px;
+}
+
+.card-big .conteudo {
+  width: 312px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card-big .conteudo div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.card-big .conteudo h3 {
+  font-family: 'Inter-Bold', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-dark-blue);
+}
+
+.card-big .conteudo p {
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 1rem;
+  color: var(--color-light-blue);
+}
+
+.card-big .conteudo span,
+.card-big .conteudo a {
+  font-size: 1rem;
+}
+
+.card-big img {
+  width: 525px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.big-card-wrapper button {
+  align-self: flex-end;
+
+  width: 120px;
+  height: 37px;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 1rem;
+
+  color: var(--color-white);
+  background-color: var(--color-purple);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.big-card-wrapper button i {
+  color: var(--color-white);
+  font-size: 18px;
+  margin-left: 4px;
 }
