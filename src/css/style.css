@@ -264,7 +264,7 @@ a {
 .card-big-container {
   width: 965px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   gap: 30px;
