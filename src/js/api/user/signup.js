@@ -1,3 +1,4 @@
+import { apiUrl } from "../api.js";
 
 document
   .getElementById("signup-forms")
@@ -18,7 +19,7 @@ document
 
     if (password === passwordConfirmed) {
       try {
-        const response = await fetch('http://localhost:8080/user/v1/signup', {
+        const response = await fetch(`${apiUrl}/user/v1/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
