@@ -1,6 +1,8 @@
-import style from './header.module.scss';
+import { useLocation } from "react-router-dom";
+import style from "./header.module.scss";
 
 export default function Header() {
+  const location = useLocation();
   return (
     <header className={style.cabecalho}>
       <nav className={style.navegacao}>
@@ -48,20 +50,26 @@ export default function Header() {
         </div>
       </nav>
 
-      <div className={style.homeCapa}>
-        <div className={style.title}>
-          <h1>
-            Your daily dose <br />
-            of inspiration
-          </h1>
-          <img src="img/image 6.png" alt="A cup of coffee" aria-hidden="true" />
+      {location.pathname === "/" && (
+        <div className={style.homeCapa}>
+          <div className={style.title}>
+            <h1>
+              Your daily dose <br />
+              of inspiration
+            </h1>
+            <img
+              src="img/image 6.png"
+              alt="A cup of coffee"
+              aria-hidden="true"
+            />
+          </div>
+          <img
+            src="img/croods 1.png"
+            alt="An inspirational illustration"
+            aria-hidden="true"
+          />
         </div>
-        <img
-          src="img/croods 1.png"
-          alt="An inspirational illustration"
-          aria-hidden="true"
-        />
-      </div>
+      )}
     </header>
   );
 }
