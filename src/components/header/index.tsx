@@ -1,30 +1,34 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.scss";
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <header className={style.cabecalho}>
       <nav className={style.navegacao}>
         <h2 className={style.logo}>DevNews</h2>
 
-        <div className={style.campoBusca}>
-          <i className="bi bi-search" aria-hidden="true"></i>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search..."
-            className={style.inputSearch}
-            aria-label="Campo de busca"
-          />
-        </div>
+        {location.pathname !== "/signin" && location.pathname !== "/signup" && (
+          <div className={style.campoBusca}>
+            <i className="bi bi-search" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="search"
+              placeholder="Search..."
+              className={style.inputSearch}
+              aria-label="Campo de busca"
+            />
+          </div>
+        )}
 
         <div className={style.menuContainer}>
           <div className={style.loginAcesso}>
-            <a aria-label="Criar conta" href="src/pages/signup.html">
+            <a aria-label="Criar conta" onClick={() => navigate('/signup')}>
               Sign-Up
             </a>
-            <a aria-label="Login" href="src/pages/signin.html">
+            <a aria-label="Login" onClick={() => navigate('/signin')}>
               Sign-In
             </a>
           </div>

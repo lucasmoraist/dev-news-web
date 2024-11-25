@@ -1,4 +1,4 @@
-@import "@/style/_variables.scss";
+@use "@/style/__variables.scss" as *;
 
 a {
   text-decoration: none;

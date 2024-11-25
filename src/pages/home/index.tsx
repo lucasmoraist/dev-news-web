@@ -4,12 +4,12 @@ import { MiniCards } from "./mini-cards";
 
 export function Home() {
   return (
-    <main>
+    <>
       <CardLargo />
 
       <MiniCards />
 
       <BigCard />
-    </main>
+    </>
   );
 }

@@ -2,7 +2,7 @@ import style from "./post.module.scss";
 
 export function Post() {
   return (
-    <main>
+    <main className={style.mainPost}>
       <div className={style.imagem} id="topo">
         <img src="img/image 3.png" alt="" />
       </div>
@@ -15,7 +15,7 @@ export function Post() {
         </div>
       </div>
 
-      <article>
+      <article className={style.postContent}>
         <h3>
           Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero
           in 45 BC

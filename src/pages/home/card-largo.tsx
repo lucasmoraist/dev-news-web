@@ -1,4 +1,4 @@
-import style from './style/card-largo.module.scss';
+import style from "./style/card-largo.module.scss";
 
 export function CardLargo() {
   return (
