@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/inter.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Dev News | SignUp</title>
-</head>
-<body>
-    <header>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <nav class="navegacao">
+        <h2 class="logo">DevNews</h2>
 
+        <div class="menu-container">
+          <div class="login-acesso">
+            <a aria-label="Criar conta" href="signup.html">Sign-Up</a>
+            <a aria-label="Login" href="signin.html">Sign-In</a>
+          </div>
+        </div>
+      </nav>
     </header>
-</body>
+    <div class="container">
+      <h1>Cadastre-se</h1>
+      <form id="signup-forms">
+        <label for="name">
+          <span>Digite seu nome completo</span>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nome"
+            required
+          />
+        </label>
+
+        <label for="email">
+          <span>Crie um email</span>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            required
+          />
+        </label>
+
+        <label for="password">
+          <span>Crie uma senha</span>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Senha"
+            required
+          />
+        </label>
+
+        <label for="passwordConfirmed">
+          <span>Confirme a senha</span>
+          <input
+            type="password"
+            name="passwordConfirmed"
+            id="passwordConfirmed"
+            placeholder="Confirmar"
+            required
+          />
+        </label>
+
+        <div class="buttons">
+          <button class="btn btn-secondary">Voltar</button>
+          <button class="btn btn-primary" type="submit">Criar conta</button>
+        </div>
+      </form>
+    </div>
+    <footer>
+      <div>
+        <p><b>DevNews</b> 2024 &copy; Todos direitos reservado.</p>
+      </div>
+      <div>
+        <img src="../../assets/img/instagram-fill 1.png" alt="Instagram logo" />
+        <img src="../../assets/img/Vector.png" alt="Twitter logo" />
+        <img
+          src="../../assets/img/linkedin-box-fill 1.png"
+          alt="LinkdIn logo"
+        />
+      </div>
+    </footer>
+
+    <script type="module" src="../../js/api/user/signup.js"></script>
+    <script type="module" src="../../js/api/api.js"></script>
+  </body>
 </html>
