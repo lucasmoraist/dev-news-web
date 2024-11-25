@@ -1,0 +1,106 @@
+@import "@/style/_variables.scss";
+
+/* HEADER */
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+
+  .navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    height: 85px;
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-family: "Inter-Bold", sans-serif;
+    }
+
+    .campoBusca {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        border: none;
+        font-size: 1rem;
+
+        &::placeholder {
+          font-size: 1rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .menuContainer {
+      display: flex;
+    }
+
+    .loginAcesso {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: "Inter-Regular", sans-serif;
+
+        &:nth-child(2) {
+          background-color: $color-black;
+          color: $color-white;
+          padding: 5px 20px;
+          border-radius: 30px;
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+      align-items: center;
+      list-style: none;
+      gap: 20px;
+
+      li a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: "Inter-Regular", sans-serif;
+        color: $color-black;
+      }
+    }
+  }
+
+  .bi-person-circle {
+    margin-left: 15px;
+    font-size: 1.75rem;
+  }
+}
+
+.homeCapa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 467px;
+  background-color: #fbfbfb;
+
+  .title {
+    position: relative;
+    width: 500px;
+
+    h1 {
+      font-family: "Inter-Bold", sans-serif;
+      font-size: 4rem;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
