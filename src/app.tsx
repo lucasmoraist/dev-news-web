@@ -4,6 +4,7 @@ import { Home } from "./pages/home";
 import { Post } from "./pages/post";
 import { SignUp } from "./pages/auth/signup";
 import { SignIn } from "./pages/auth/signin";
+import { NewPost } from "./pages/new-post";
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
         </Route>
+        <Route path="/new-post" element={<NewPost />} />
       </Routes>
     </Router>
   );

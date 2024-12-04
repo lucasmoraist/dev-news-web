@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 30px;
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    span {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .imageBanner {
+    display: flex;
+    align-self: center;
+    width: 973px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .voltar {
+    background-color: #007bff;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #298efa;
+      transition: 0.5s;
+    }
+
+    &:not(:hover) {
+      transition: 0.3s;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .title {
+      border: none;
+      font-size: 32px;
+    }
+
+    .title:focus {
+      outline: none;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #298efa;
+        transition: 0.5s;
+      }
+
+      &:not(:hover) {
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .editingArea {
+    height: 100%;
+    margin-bottom: 30px;
+  }
+}
