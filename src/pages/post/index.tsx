@@ -1,3 +1,4 @@
+import { Comments } from "@/pages/post/components/comments";
 import style from "./post.module.scss";
 
 export function Post() {
@@ -117,6 +118,10 @@ export function Post() {
         <a href="#topo">
           <i className="bi bi-arrow-up-circle-fill"></i>
         </a>
+
+        <div>
+          <Comments />
+        </div>
       </article>
     </main>
   );
