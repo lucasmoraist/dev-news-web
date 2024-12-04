@@ -1,4 +1,4 @@
-import style from './style/big-card.module.scss';
+import style from '../style/big-card.module.scss';
 
 export function BigCard() {
   return (

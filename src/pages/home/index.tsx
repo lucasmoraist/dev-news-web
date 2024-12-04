@@ -1,6 +1,6 @@
-import { BigCard } from "./big-card";
-import { CardLargo } from "./card-largo";
-import { MiniCards } from "./mini-cards";
+import { BigCard } from "./components/big-card";
+import { CardLargo } from "./components/card-largo";
+import { MiniCards } from "./components/mini-cards";
 
 export function Home() {
   return (

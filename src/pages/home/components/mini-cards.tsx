@@ -1,4 +1,4 @@
-import style from "./style/mini-cards.module.scss";
+import style from "../style/mini-cards.module.scss";
 
 export function MiniCards() {
   return (
