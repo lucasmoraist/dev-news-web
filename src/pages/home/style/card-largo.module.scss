@@ -33,13 +33,13 @@
       h3 {
         font-family: "Inter-Bold", sans-serif;
         font-size: 1.9rem;
-        color: $color-dark-blue;
+        color: $color-dark-gray;
       }
 
       p {
         font-family: "Inter-Regular", sans-serif;
         font-size: 0.875rem;
-        color: $color-light-blue;
+        color: $color-light-gray;
       }
 
       div:nth-child(2) {
@@ -53,13 +53,13 @@
         .dataPostagem {
           font-family: "Inter-Regular", sans-serif;
           font-size: 0.75rem;
-          color: $color-light-blue;
+          color: $color-light-gray;
         }
 
         .verMais {
           font-family: "Inter-Bold", sans-serif;
           font-size: 0.875rem;
-          color: $color-dark-blue;
+          color: $color-dark-gray;
           text-decoration: none;
         }
       }
