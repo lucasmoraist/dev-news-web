@@ -1,60 +1,87 @@
+import { Form, Formik, FormikValues } from "formik";
+import style from "./auth.module.scss";
+import * as Yup from "yup";
+import { Input } from "@/components/input";
+import { Button } from "@/components/button";
+import { Link } from "react-router-dom";
+
 export function SignUp() {
+  const initialValues = {
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirmed: "",
+  };
+
+  const schema = Yup.object().shape({
+    name: Yup.string().required("Campo obrigatório."),
+    email: Yup.string().email("Email inválido.").required("Campo obrigatório."),
+    password: Yup.string()
+      .min(6, "Mínimo de 6 caracteres.")
+      .required("Campo obrigatório."),
+    passwordConfirmed: Yup.string().oneOf(
+      [Yup.ref("password")],
+      "As senhas devem ser iguais."
+    ),
+  });
+
+  const handleSubmit = (values: FormikValues) => {
+    console.log(values);
+  };
+
   return (
     <div>
-      <div className="container">
-        <h1>Cadastre-se</h1>
-        <form id="signup-forms">
-          <label>
-            <span>Digite seu nome completo</span>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Nome"
-              required
-            />
-          </label>
+      <div className={style.container}>
+        <h1 className={style.title}>Cadastre-se</h1>
 
-          <label>
-            <span>Crie um email</span>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="example@email.com"
-              required
-            />
-          </label>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={schema}
+          onSubmit={handleSubmit}
+        >
+          {(formik) => {
+            return (
+              <Form onSubmit={formik.handleSubmit} className={style.form}>
+                <Input
+                  text="Digite seu nome completo"
+                  type="text"
+                  name="name"
+                  placeholder="Nome"
+                />
 
-          <label>
-            <span>Crie uma senha</span>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Senha"
-              required
-            />
-          </label>
+                <Input
+                  text="Crie um email"
+                  type="email"
+                  name="email"
+                  placeholder="example@email.com"
+                />
 
-          <label>
-            <span>Confirme a senha</span>
-            <input
-              type="password"
-              name="passwordConfirmed"
-              id="passwordConfirmed"
-              placeholder="Confirmar"
-              required
-            />
-          </label>
+                <Input
+                  text="Crie uma senha"
+                  type="password"
+                  name="password"
+                  placeholder="Senha"
+                />
 
-          <div className="buttons">
-            <button className="btn btn-secondary">Voltar</button>
-            <button className="btn btn-primary" type="submit">
-              Criar conta
-            </button>
-          </div>
-        </form>
+                <Input
+                  text="Confirme a senha"
+                  type="password"
+                  name="passwordConfirmed"
+                  placeholder="Confirmar"
+                />
+
+                <div className={style.buttons}>
+                  <Button button="secondary">
+                    <Link to={"/"}>Voltar</Link>
+                  </Button>
+                  <Button type="submit" button="primary">
+                    Criar conta
+                  </Button>
+                </div>
+              </Form>
+            );
+          }}
+        </Formik>
       </div>
     </div>
   );
