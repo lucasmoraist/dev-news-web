@@ -1,4 +1,4 @@
-import './footer.module.scss';
+import "./footer.module.scss";
 
 export default function Footer() {
   return (
@@ -9,9 +9,9 @@ export default function Footer() {
         </p>
       </div>
       <div>
-        <img src="img/instagram-fill 1.png" alt="Instagram logo" />
-        <img src="img/Vector.png" alt="Twitter logo" />
-        <img src="img/linkedin-box-fill 1.png" alt="LinkdIn logo" />
+        <i className="bi bi-instagram"></i>
+        <i className="bi bi-twitter-x"></i>
+        <i className="bi bi-linkedin"></i>
       </div>
     </footer>
   );
