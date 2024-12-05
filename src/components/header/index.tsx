@@ -1,9 +1,21 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.scss";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [isLogged, setIsLogged] = useState(false);
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (token) {
+      setIsLogged(true);
+    } else {
+      setIsLogged(false);
+    }
+  }, [token]);
 
   return (
     <header className={style.cabecalho}>
@@ -26,33 +38,39 @@ export default function Header() {
         )}
 
         <div className={style.menuContainer}>
-          <div className={style.loginAcesso}>
-            <a aria-label="Criar conta" onClick={() => navigate("/signup")}>
-              Sign-Up
-            </a>
-            <a aria-label="Login" onClick={() => navigate("/signin")}>
-              Sign-In
-            </a>
-          </div>
-
-          <menu className={style.menu}>
-            <li>
-              <a aria-label="Página Inicial" href="index.html">
-                Home
+          {!isLogged ? (
+            <div className={style.loginAcesso}>
+              <a aria-label="Criar conta" onClick={() => navigate("/signup")}>
+                Sign-Up
               </a>
-            </li>
-            <li>
-              <a aria-label="Escrever" href="#">
-                <i className="bi bi-pencil-square" aria-hidden="true"></i>
-                Write
+              <a aria-label="Login" onClick={() => navigate("/signin")}>
+                Sign-In
               </a>
-            </li>
-            <li>
-              <a aria-label="Perfil" href="#">
-                <i className="bi bi-person-circle" aria-hidden="true"></i>
-              </a>
-            </li>
-          </menu>
+            </div>
+          ) : (
+            <menu className={style.menu}>
+              <li>
+                <Link aria-label="Página Inicial" to={"/"}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/new-post"}
+                  aria-label="Escrever"
+                  style={{ display: "flex", gap: 5 }}
+                >
+                  <i className="bi bi-pencil-square" aria-hidden="true"></i>
+                  Write
+                </Link>
+              </li>
+              <li>
+                <Link aria-label="Perfil" to={"/profile"}>
+                  <i className="bi bi-person-circle" aria-hidden="true"></i>
+                </Link>
+              </li>
+            </menu>
+          )}
         </div>
       </nav>
 
