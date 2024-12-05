@@ -3,7 +3,7 @@ import { BigCard } from "./components/big-card";
 import { CardLargo } from "./components/card-largo";
 import { MiniCards } from "./components/mini-cards";
 import { listPosts } from "@/api/post/listPosts";
-import { IListPosts } from "@/interface/listPosts";
+import { IListPosts } from "@/interface/listPosts.interface";
 import styleMini from "./style/mini-cards.module.scss";
 
 export function Home() {

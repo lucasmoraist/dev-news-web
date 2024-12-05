@@ -1,4 +1,4 @@
-import { Pagination } from "@/interface/listPosts";
+import { Pagination } from "@/interface/listPosts.interface";
 import { api } from "../api";
 
 export async function listPosts(

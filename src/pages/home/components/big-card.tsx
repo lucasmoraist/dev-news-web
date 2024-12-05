@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import style from "../style/big-card.module.scss";
-import { IListPosts } from "@/interface/listPosts";
+import { IListPosts } from "@/interface/listPosts.interface";
 import { useImage } from "@/hooks/useImage";
 
 interface Props {
