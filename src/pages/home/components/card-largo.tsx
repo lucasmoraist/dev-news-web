@@ -1,22 +1,40 @@
 import { Link } from "react-router-dom";
 import style from "../style/card-largo.module.scss";
+import { IListPosts } from "@/interface/listPosts";
+import { useEffect, useState } from "react";
+import { getImage } from "@/api/image/getImage";
 
-export function CardLargo() {
+interface Props {
+  post: IListPosts;
+}
+
+export function CardLargo({ post }: Props) {
+  const [image, setImage] = useState<string>();
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getImage(post.imageBanner);
+      setImage(res);
+    }
+
+    fetchData();
+  }, [])
+
+
   return (
     <section className={style.cardLargoWrapper}>
       <article className={style.cardLargo}>
         <div className={style.conteudo}>
           <div>
-            <h3>long established</h3>
+            <h3>{post.title}</h3>
             <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that....
+              {post.content}
             </p>
           </div>
 
           <div>
-            <span className={style.dataPostagem}>May 20th 2020</span>
+            {/* <span className={style.dataPostagem}>May 20th 2020</span> */}
+            <span className={style.dataPostagem}>{post.updatedAt}</span>
             <Link
                 to="/post"
                 className={style.verMais}
@@ -27,7 +45,8 @@ export function CardLargo() {
               </Link>
           </div>
         </div>
-        <img src="img/image 1.png" alt="Post cover image" aria-hidden="true" />
+        {/* <img src="img/image 1.png" alt="Post cover image" aria-hidden="true" /> */}
+        <img src={image} alt="Post cover image" aria-hidden="true" />
       </article>
     </section>
   );

@@ -1,98 +1,47 @@
 import { Link } from "react-router-dom";
 import style from "../style/mini-cards.module.scss";
+import { IListPosts } from "@/interface/listPosts";
+import { useEffect, useState } from "react";
+import { getImage } from "@/api/image/getImage";
 
-export function MiniCards() {
+interface Props {
+  post: IListPosts;
+}
+
+export function MiniCards({ post }: Props) {
+  const [image, setImage] = useState<string>();
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getImage(post.imageBanner);
+      setImage(res);
+    }
+
+    fetchData();
+  }, []);
+
   return (
-    <section className={style.cardPequenoWrapper}>
-      <article className={style.cardPequeno}>
-        <img
-          src="img/image 2.png"
-          alt="Post preview image 2"
-          aria-hidden="true"
-        />
-        <div className={style.conteudo}>
-          <div>
-            <h3>long established</h3>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that....
-            </p>
-          </div>
-
-          <div>
-            <span className={style.dataPostagem}>May 20th 2020</span>
-            <Link
-              to="/post"
-              className={style.verMais}
-              aria-label="Ler mais"
-              title="Leia mais sobre o post"
-            >
-              Read more
-            </Link>
-          </div>
+    <article className={style.cardPequeno}>
+      <img src={image} alt="Post preview image 2" aria-hidden="true" />
+      <div className={style.conteudo}>
+        <div>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
         </div>
-      </article>
 
-      <article className={style.cardPequeno}>
-        <img
-          src="img/image 4.png"
-          alt="Post preview image 2"
-          aria-hidden="true"
-        />
-        <div className={style.conteudo}>
-          <div>
-            <h3>long established</h3>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that....
-            </p>
-          </div>
-
-          <div>
-            <span className={style.dataPostagem}>May 20th 2020</span>
-            <Link
-              to="/post"
-              className={style.verMais}
-              aria-label="Ler mais"
-              title="Leia mais sobre o post"
-            >
-              Read more
-            </Link>
-          </div>
+        <div>
+          {/* <span className={style.dataPostagem}>May 20th 2020</span> */}
+          <span className={style.dataPostagem}>{post.updatedAt}</span>
+          <Link
+            to="/post"
+            className={style.verMais}
+            aria-label="Ler mais"
+            title="Leia mais sobre o post"
+          >
+            Read more
+          </Link>
         </div>
-      </article>
-
-      <article className={style.cardPequeno}>
-        <img
-          src="img/image 5.png"
-          alt="Post preview image 2"
-          aria-hidden="true"
-        />
-        <div className={style.conteudo}>
-          <div>
-            <h3>long established</h3>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that....
-            </p>
-          </div>
-
-          <div>
-            <span className={style.dataPostagem}>May 20th 2020</span>
-            <Link
-              to="/post"
-              className={style.verMais}
-              aria-label="Ler mais"
-              title="Leia mais sobre o post"
-            >
-              Read more
-            </Link>
-          </div>
-        </div>
-      </article>
-    </section>
+      </div>
+    </article>
   );
 }

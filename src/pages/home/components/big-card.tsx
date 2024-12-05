@@ -1,24 +1,41 @@
 import { Link } from "react-router-dom";
 import style from "../style/big-card.module.scss";
+import { IListPosts } from "@/interface/listPosts";
+import { useEffect, useState } from "react";
+import { getImage } from "@/api/image/getImage";
 
-export function BigCard() {
+interface Props {
+  post: IListPosts;
+}
+
+export function BigCard({ post }: Props) {
+
+  const [image, setImage] = useState<string>();
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getImage(post.imageBanner);
+      setImage(res);
+    }
+
+    fetchData();
+  }, [])
+
   return (
     <section className={style.bigCardWrapper}>
       <div className={style.cardBigContainer}>
         <article className={style.cardBig}>
           <div className={style.conteudo}>
             <div>
-              <h3>What is Lorem Ipsum?</h3>
+              <h3>{post.title}</h3>
               <p>
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less
-                normal distribution...
+                {post.content}
               </p>
             </div>
 
             <div>
-              <span className={style.dataPostagem}>May 20</span>
+              {/* <span className={style.dataPostagem}>May 20</span> */}
+              <span className={style.dataPostagem}>{post.updatedAt}</span>
               <Link
                 to="/post"
                 className={style.verMais}
@@ -30,7 +47,7 @@ export function BigCard() {
             </div>
           </div>
           <img
-            src="img/image 7.png"
+            src={image}
             alt="Big post cover image"
             aria-hidden="true"
           />
