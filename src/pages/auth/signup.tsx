@@ -3,9 +3,11 @@ import style from "./auth.module.scss";
 import * as Yup from "yup";
 import { Input } from "@/components/input";
 import { Button } from "@/components/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createUser } from "@/api/user/createUser";
 
 export function SignUp() {
+  const navigation = useNavigate();
   const initialValues = {
     name: "",
     email: "",
@@ -25,8 +27,17 @@ export function SignUp() {
     ),
   });
 
-  const handleSubmit = (values: FormikValues) => {
-    console.log(values);
+  const handleSubmit = async (values: FormikValues) => {
+    const { name, email, password } = values;
+
+    try {
+      const res = await createUser({ name, email, password });
+      if (res === 200) {
+        navigation("/signin");
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

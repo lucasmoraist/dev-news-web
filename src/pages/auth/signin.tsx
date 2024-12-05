@@ -3,9 +3,12 @@ import style from "./auth.module.scss";
 import { Button } from "@/components/button";
 import { Form, Formik, FormikValues } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "@/api/user/login";
 
 export function SignIn() {
+  const navigation = useNavigate();
+
   const initialValues = {
     email: "",
     password: "",
@@ -16,8 +19,15 @@ export function SignIn() {
     password: Yup.string().required("Campo obrigatório"),
   });
 
-  const handleSubmit = (values: FormikValues) => {
-    console.log(values);
+  const handleSubmit = async (values: FormikValues) => {
+    const { email, password } = values;
+
+    const response = await login({ email, password });
+
+    if (response) {
+      localStorage.setItem("token", response.token);
+      navigation("/");
+    }
   };
 
   return (
