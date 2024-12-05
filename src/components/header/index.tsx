@@ -1,20 +1,24 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.scss";
+import { useLogged } from "@/hooks/useLogged";
 import { useEffect, useState } from "react";
 
 export default function Header() {
+  const token = localStorage.getItem("token");
   const location = useLocation();
   const navigate = useNavigate();
+  const [isLogged, setIsLogged] = useState(useLogged.isLogged);
 
-  const [isLogged, setIsLogged] = useState(false);
-  const token = localStorage.getItem("token");
-
-  useEffect(() => {
+  const verifyIsLogged = () => {
     if (token) {
       setIsLogged(true);
     } else {
       setIsLogged(false);
     }
+  };
+
+  useEffect(() => {
+    verifyIsLogged();
   }, [token]);
 
   return (
