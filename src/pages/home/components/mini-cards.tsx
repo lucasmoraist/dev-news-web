@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "../style/mini-cards.module.scss";
 
 export function MiniCards() {
@@ -21,14 +22,14 @@ export function MiniCards() {
 
           <div>
             <span className={style.dataPostagem}>May 20th 2020</span>
-            <a
-              aria-label="Ler mais"
-              href="#"
+            <Link
+              to="/post"
               className={style.verMais}
-              title="Leia mais sobre esse post"
+              aria-label="Ler mais"
+              title="Leia mais sobre o post"
             >
               Read more
-            </a>
+            </Link>
           </div>
         </div>
       </article>
@@ -51,14 +52,14 @@ export function MiniCards() {
 
           <div>
             <span className={style.dataPostagem}>May 20th 2020</span>
-            <a
-              aria-label="Ler mais"
-              href="#"
+            <Link
+              to="/post"
               className={style.verMais}
-              title="Leia mais sobre esse post"
+              aria-label="Ler mais"
+              title="Leia mais sobre o post"
             >
               Read more
-            </a>
+            </Link>
           </div>
         </div>
       </article>
@@ -81,14 +82,14 @@ export function MiniCards() {
 
           <div>
             <span className={style.dataPostagem}>May 20th 2020</span>
-            <a
-              aria-label="Ler mais"
-              href="#"
+            <Link
+              to="/post"
               className={style.verMais}
-              title="Leia mais sobre esse post"
+              aria-label="Ler mais"
+              title="Leia mais sobre o post"
             >
               Read more
-            </a>
+            </Link>
           </div>
         </div>
       </article>

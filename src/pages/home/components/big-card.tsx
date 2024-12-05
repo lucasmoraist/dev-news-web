@@ -1,4 +1,5 @@
-import style from '../style/big-card.module.scss';
+import { Link } from "react-router-dom";
+import style from "../style/big-card.module.scss";
 
 export function BigCard() {
   return (
@@ -18,14 +19,14 @@ export function BigCard() {
 
             <div>
               <span className={style.dataPostagem}>May 20</span>
-              <a
-                aria-label="Ler mais"
-                href="#"
+              <Link
+                to="/post"
                 className={style.verMais}
-                title="Leia mais sobre esse post"
+                aria-label="Ler mais"
+                title="Leia mais sobre o post"
               >
                 Read more
-              </a>
+              </Link>
             </div>
           </div>
           <img

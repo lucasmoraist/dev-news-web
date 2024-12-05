@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "../style/card-largo.module.scss";
 
 export function CardLargo() {
@@ -16,14 +17,14 @@ export function CardLargo() {
 
           <div>
             <span className={style.dataPostagem}>May 20th 2020</span>
-            <a
-              aria-label="Ler mais"
-              href="#"
-              className={style.verMais}
-              title="Leia mais sobre esse post"
-            >
-              Read more
-            </a>
+            <Link
+                to="/post"
+                className={style.verMais}
+                aria-label="Ler mais"
+                title="Leia mais sobre o post"
+              >
+                Read more
+              </Link>
           </div>
         </div>
         <img src="img/image 1.png" alt="Post cover image" aria-hidden="true" />

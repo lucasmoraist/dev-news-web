@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.scss";
 
 export default function Header() {
@@ -8,7 +8,9 @@ export default function Header() {
   return (
     <header className={style.cabecalho}>
       <nav className={style.navegacao}>
-        <h2 className={style.logo}>DevNews</h2>
+        <Link to={"/"}>
+          <h2 className={style.logo}>DevNews</h2>
+        </Link>
 
         {location.pathname !== "/signin" && location.pathname !== "/signup" && (
           <div className={style.campoBusca}>
@@ -25,10 +27,10 @@ export default function Header() {
 
         <div className={style.menuContainer}>
           <div className={style.loginAcesso}>
-            <a aria-label="Criar conta" onClick={() => navigate('/signup')}>
+            <a aria-label="Criar conta" onClick={() => navigate("/signup")}>
               Sign-Up
             </a>
-            <a aria-label="Login" onClick={() => navigate('/signin')}>
+            <a aria-label="Login" onClick={() => navigate("/signin")}>
               Sign-In
             </a>
           </div>
