@@ -1,25 +1,14 @@
 import { Link } from "react-router-dom";
 import style from "../style/big-card.module.scss";
 import { IListPosts } from "@/interface/listPosts";
-import { useEffect, useState } from "react";
-import { getImage } from "@/api/image/getImage";
+import { useImage } from "@/hooks/useImage";
 
 interface Props {
   post: IListPosts;
 }
 
 export function BigCard({ post }: Props) {
-
-  const [image, setImage] = useState<string>();
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await getImage(post.imageBanner);
-      setImage(res);
-    }
-
-    fetchData();
-  }, [])
+  const image = useImage(post.imageBanner);
 
   return (
     <section className={style.bigCardWrapper}>
