@@ -1,0 +1,119 @@
+@use "@/style/__variables.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .banner {
+    background-color: #c5c5c5;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    .circle {
+      width: 150px;
+      height: 150px;
+      background-color: #c5c5c5;
+      border: solid 6px $color-white;
+      border-radius: 100px;
+      position: absolute;
+      bottom: -100px;
+      left: 45%;
+    }
+  }
+
+  .container {
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .about {
+      margin-top: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      h2 {
+        font-size: 24px;
+        line-height: 30px;
+        color: $color-black;
+        text-align: center;
+      }
+
+      button {
+        background: none;
+        border: none;
+
+        i {
+          cursor: pointer;
+          font-size: 18px;
+          color: $color-dark-gray;
+
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+    }
+
+    .security {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+
+      gap: 10px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+
+        span {
+          font-size: 14px;
+          color: $color-dark-gray;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+
+        input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid $color-light-gray;
+          border-radius: 5px;
+          font-size: 16px;
+          color: $color-dark-gray;
+        }
+      }
+      .buttons {
+        width: 300px;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+      }
+    }
+
+    .posts {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 40px;
+
+      h3 {
+        font-size: 24px;
+        color: $color-black;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

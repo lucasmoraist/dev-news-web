@@ -2,7 +2,8 @@ import { getUser } from "@/api/user/getUser";
 import { IUserResponse } from "@/interface/getUser.interface";
 import { useEffect, useState } from "react";
 import style from "./profile.module.scss";
-import { useImage } from "@/hooks/useImage";
+import { PostsProfile } from "./components/posts";
+import { Button } from "@/components/button";
 
 export function Profile() {
   const [user, setUser] = useState<IUserResponse>();
@@ -18,45 +19,51 @@ export function Profile() {
   }, []);
 
   return (
-    <div>
-      <div className={style.banner}></div>
-      <div>
-        <h2>{user?.name}</h2>
+    <div className={style.wrapper}>
+      <div className={style.banner}>
+        <div className={style.circle}></div>
       </div>
 
-      <div>
-        <label htmlFor="">
-          <span>Email: </span>
-          <input
-            type="email"
-            value={user?.email}
-            disabled={inputActive ? true : false}
-          />
-        </label>
-        <label htmlFor="">
-          <span>Senha: </span>
-          <input
-            type="password"
-            value={user?.password}
-            disabled={inputActive ? true : false}
-          />
-        </label>
-      </div>
+      <div className={style.container}>
+        <div className={style.about}>
+          <h2>{user?.name}</h2>
+          <button onClick={() => setInputActive(false)}>
+            <i className="bi bi-pencil-fill"></i>
+          </button>
+        </div>
 
-      <div>
-        <h3>Minhas postagens</h3>
-        {user?.posts.map((p) => {
-          const image = useImage(p.imageBanner);
-          return (
-            <div key={p.id}>
-              <img src={image} alt="" />
-              <h4>{p.title}</h4>
-              <p>{p.updatedAt}</p>
-              <i className="bi bi-pencil-square"></i>
-              <i className="bi bi-trash"></i>
+        <div className={style.security}>
+          <label>
+            <span>Email: </span>
+            <input
+              type="email"
+              value={user?.email}
+              disabled={inputActive ? true : false}
+            />
+          </label>
+          <label>
+            <span>Senha: </span>
+            <input
+              type="password"
+              value={user?.password}
+              disabled={inputActive ? true : false}
+            />
+          </label>
+
+          {!inputActive && (
+            <div className={style.buttons}>
+              <Button button="secondary" onClick={() => setInputActive(true)}>Cancelar</Button>
+              <Button button="primary">Salvar</Button>
             </div>
-          );
-        })}
+          )}
+        </div>
+
+        <div className={style.posts}>
+          <h3>Minhas postagens</h3>
+          {user?.posts.map((p) => (
+            <PostsProfile key={p.id} post={p} />
+          ))}
+        </div>
       </div>
     </div>
   );
