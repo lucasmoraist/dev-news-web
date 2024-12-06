@@ -3,56 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   margin: 30px;
-
-  .banner {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-
-    span {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-  }
-
-  .imageBanner {
-    display: flex;
-    align-self: center;
-    width: 973px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 30px;
-  }
-
-  .voltar {
-    background-color: $color-blue;
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    a {
-      color: $color-white;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background-color: $color-blue-hover;
-      transition: 0.5s;
-    }
-
-    &:not(:hover) {
-      transition: 0.3s;
-    }
-  }
 
   .header {
     display: flex;
@@ -86,10 +37,5 @@
         transition: 0.3s;
       }
     }
-  }
-
-  .editingArea {
-    height: 100%;
-    margin-bottom: 30px;
   }
 }
