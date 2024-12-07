@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
-import style from "../style/big-card.module.scss";
-import { IListPosts } from "@/interface/listPosts.interface";
-import { useImage } from "@/hooks/useImage";
+import { Link, Outlet } from 'react-router-dom';
+import style from '../style/big-card.module.scss';
+import { IListPosts } from '@/interface/listPosts.interface';
+import { useImage } from '@/hooks/useImage';
 
 interface Props {
   post: IListPosts;
+  onClick?: () => void;
+  size: number;
+  children?: React.ReactNode;
 }
 
-export function BigCard({ post }: Props) {
+export function BigCard({ post, children }: Props) {
   const image = useImage(post.imageBanner);
 
   return (
@@ -17,9 +20,7 @@ export function BigCard({ post }: Props) {
           <div className={style.conteudo}>
             <div>
               <h3>{post.title}</h3>
-              <p>
-                {post.content}
-              </p>
+              <p>{post.content}</p>
             </div>
 
             <div>
@@ -35,20 +36,9 @@ export function BigCard({ post }: Props) {
               </Link>
             </div>
           </div>
-          <img
-            src={image}
-            alt="Big post cover image"
-            aria-hidden="true"
-          />
+          <img src={image} alt="Big post cover image" aria-hidden="true" />
         </article>
-        <button
-          className={style.verMaisPostagens}
-          aria-label="Ver mais postagens do blog"
-          role="button"
-        >
-          Ver mais
-          <i className="bi bi-arrow-down-circle-fill" aria-hidden="true"></i>
-        </button>
+        {children}
       </div>
     </section>
   );
