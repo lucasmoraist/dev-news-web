@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import style from "./header.module.scss";
 import { useLogged } from "@/hooks/useLogged";
 import { useEffect, useState } from "react";
+import { Search } from "../search";
 
 export default function Header() {
   const token = localStorage.getItem("token");
@@ -29,16 +30,7 @@ export default function Header() {
         </Link>
 
         {location.pathname !== "/signin" && location.pathname !== "/signup" && (
-          <div className={style.campoBusca}>
-            <i className="bi bi-search" aria-hidden="true"></i>
-            <input
-              type="text"
-              id="search"
-              placeholder="Search..."
-              className={style.inputSearch}
-              aria-label="Campo de busca"
-            />
-          </div>
+          <Search />
         )}
 
         <div className={style.menuContainer}>

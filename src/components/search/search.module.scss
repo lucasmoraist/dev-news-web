@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.campoBusca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    border: none;
+    font-size: 1rem;
+
+    &::placeholder {
+      font-size: 1rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.results {
+    list-style: none;
+}
